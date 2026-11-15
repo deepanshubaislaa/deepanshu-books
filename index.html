@@ -1,170 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deepanshu Baisla – Books</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-    :root {
-        --bg: #07090e;
-        --panel: #0e1422;
-        --accent: #5eead4;
-        --text: #e2e8f0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepanshu Baisla | My Books</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    * { box-sizing: border-box; }
+
     body {
-        margin: 0;
-        background-color: var(--bg);
-        color: var(--text);
-        font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: Georgia, serif;
+      background: #101014;
+      color: #f4f0e8;
+      line-height: 1.6;
     }
-    main {
-        max-width: 900px;
-        margin: auto;
-        padding: 40px 20px;
+
+    header {
+      text-align: center;
+      padding: 65px 20px 40px;
     }
-    .top-badge {
-        font-family: 'Playfair Display', serif;
-        font-size: 14px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 10px;
+
+    .eyebrow {
+      color: #d8b77a;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
     }
+
     h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(36px, 6vw, 56px);
-        line-height: 1.1;
-        color: #ffffff;
-        margin-top: 5px;
-        text-shadow: 0 0 20px rgba(94, 234, 212, 0.2);
+      font-size: 48px;
+      margin: 15px 0;
     }
+
     .intro {
-        color: #94a3b8;
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 40px;
-        max-width: 600px;
+      color: #b9b3aa;
+      font-size: 18px;
     }
-    .section-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 28px;
-        color: #ffffff;
-        margin: 40px 0 20px 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+
+    .books {
+      max-width: 950px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
+
+    .book {
+      background: #1a1a22;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
     }
-    article {
-        background: var(--panel);
-        border: 1px solid rgba(94, 234, 212, 0.15);
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-        transition: all 0.3s ease;
+
+    .book img {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 18px;
     }
-    article:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent);
-        box-shadow: 0 20px 40px rgba(94, 234, 212, 0.1);
-    }
-    article img {
-        display: block;
-        width: 100%;
-        max-height: 420px;
-        object-fit: cover;
-    }
-    .pad {
-        padding: 28px;
-    }
+
     h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 26px;
-        color: var(--accent);
-        margin: 0 0 12px 0;
+      font-size: 27px;
+      margin-bottom: 10px;
     }
-    p.book-desc {
-        color: #cbd5e1;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 24px;
+
+    .description {
+      color: #b9b3aa;
+      margin-bottom: 20px;
     }
-    .links {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    .links a {
-        background: rgba(94, 234, 212, 0.05);
-        color: var(--accent);
-        border: 1px solid var(--accent);
-        border-radius: 50px;
-        padding: 10px 22px;
-        font-size: 14px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.3s ease;
+
+    .actions a {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid #d8b77a;
+      border-radius: 30px;
+      color: #f4f0e8;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
     }
-    .links a:hover {
-        background: var(--accent);
-        color: var(--bg);
-        box-shadow: 0 0 15px rgba(94, 234, 212, 0.4);
+
+    .actions a.primary {
+      background: #d8b77a;
+      color: #17130d;
     }
+
     footer {
-        text-align: center;
-        color: #64748b;
-        font-size: 13px;
-        margin-top: 60px;
-        border-top: 1px solid rgba(255,255,255,0.05);
-        padding-top: 20px;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      color: #b9b3aa;
+      font-size: 13px;
     }
-    </style>
+  </style>
 </head>
+
 <body>
-<main>
-    <div class="top-badge">Writing & Reflections</div>
+
+  <header>
+    <div class="eyebrow">A Personal Library</div>
     <h1>Deepanshu Baisla</h1>
-    <p class="intro">Two original short books exploring the words we leave unspoken, the identities we inherit, and the quiet freedom of becoming ourselves.</p>
-    
-    <div class="section-title">📖 My Books</div>
+    <p class="intro">
+      My personal library of original philosophical writings.
+    </p>
+  </header>
 
-    <section class="grid">
-        <!-- Book 1: Things I Never Said -->
-        <article>
-            <img src="assets/things-i-never-said-cover.jpg" alt="Things I Never Said" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80'">
-            <div class="pad">
-                <h2>Things I Never Said</h2>
-                <p class="book-desc">A collection of quiet questions, unfinished conversations, and the courage to be understood.</p>
-                <div class="links">
-                    <a href="pdf/things-i-never-said.pdf" target="_blank">Read PDF</a>
-                    <a href="text/things-i-never-said.html">Read text</a>
-                </div>
-            </div>
-        </article>
+  <main class="books">
 
-        <!-- Book 2: Nobody -->
-        <article>
-            <img src="assets/the-art-of-being-nobody-cover.jpg" alt="Nobody" onerror="this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80'">
-            <div class="pad">
-                <h2>Nobody</h2>
-                <p class="book-desc">A journey within, exploring the quiet spaces of identity and self-discovery.</p>
-                <div class="links">
-                    <a href="pdf/nobody.pdf" target="_blank">Read PDF</a>
-                    <a href="text/nobody.html">Read text</a>
-                </div>
-            </div>
-        </article>
-    </section>
+    <article class="book">
+      <img src="assets/things-i-never-said-cover.png"
+           alt="Things I Never Said Cover">
 
-    <footer>
-        © 2026 Deepanshu Baisla · Original Short Books
-    </footer>
-</main>
+      <h2>Things I Never Said</h2>
+
+      <p class="description">
+        A collection of reflections on silence, unspoken thoughts,
+        and the emotions we struggle to express.
+      </p>
+
+      <div class="actions">
+        <a class="primary"
+           href="books/things-i-never-said.pdf"
+           target="_blank">Read PDF</a>
+
+        <a href="books/things-i-never-said.md"
+           target="_blank">Read Text</a>
+      </div>
+    </article>
+
+    <article class="book">
+      <img src="assets/the-art-of-being-nobody-cover.png"
+           alt="The Art of Being Nobody Cover">
+
+      <h2>The Art of Being Nobody</h2>
+
+      <p class="description">
+        Thoughts on identity, society, solitude, change,
+        and the freedom to simply be.
+      </p>
+
+      <div class="actions">
+        <a class="primary"
+           href="books/the-art-of-being-nobody.pdf"
+           target="_blank">Read PDF</a>
+
+        <a href="books/the-art-of-being-nobody.md"
+           target="_blank">Read Text</a>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    Written by Deepanshu Baisla
+  </footer>
+
 </body>
 </html>
